@@ -8,3 +8,19 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+@use "vuetify/settings" with (
+  $button-elevation: (
+    "default": 0,
+    "hover": 0,
+    "active": 0,
+  ),
+  $button-disabled-opacity: 1,
+  $button-disabled-overlay: 0,
+  //   $button-font-size: tools.map-deep-get(settings.$typography, "button", "size"),
+  //   $button-font-weight:
+  //     tools.map-deep-get(settings.$typography, "button", "weight")
+);
+
+.v-btn__overlay {
+  border-radius: 0.75rem;
+}

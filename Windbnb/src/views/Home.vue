@@ -1,7 +1,7 @@
 <template>
-  <CardList />
+  <Card />
 </template>
 
 <script lang="ts" setup>
-import CardList from "@/components/CardList.vue";
+import Card from "@/components/Card.vue";
 </script>
