@@ -1,0 +1,9 @@
+=> filtering styas 
+=> search bar 
+=> local storage for theme 
+=> add stay 
+=> rest api back 
+=> details page
+=> connect express with mongoDb 
+=> connect express with vue 
+=> finished full stack project 

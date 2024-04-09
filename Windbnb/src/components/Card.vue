@@ -1,5 +1,10 @@
 <template>
-  <v-card v-for="(stay, index) in stays" :key="index" class="rounded-xl">
+  <v-card
+    v-for="(stay, index) in stays"
+    :key="index"
+    class="rounded-xl"
+    @click="$router.replace(`${stay.id}`)"
+  >
     <v-img :src="stay.photo" class="!max-h-[250px]" />
     <v-card-text class="flex justify-between items-center">
       <span
@@ -22,5 +27,6 @@
 </template>
 
 <script lang="ts" setup>
-defineProps(["stays"]);
+const props = defineProps(["stays"]);
+console.log(props.stays);
 </script>

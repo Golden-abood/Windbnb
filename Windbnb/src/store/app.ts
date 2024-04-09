@@ -2,7 +2,8 @@
 import { defineStore } from "pinia";
 import data from "../assets/data/stays.json";
 import { ref } from "vue";
-interface stays {
+import { stays } from "../types/index";
+export interface stays {
   city: string;
   country: string;
   superHost: boolean;
@@ -13,9 +14,16 @@ interface stays {
   beds: number;
   photo: string;
 }
-
 export const useAppStore = defineStore("app", () => {
   const stays = ref<stays[]>(data);
-  console.log(stays.value);
-  return { stays };
+  const activeStay = ref<stays[]>([]);
+
+  const dataFiltered = (loc: string = "Oulu") => {
+    activeStay.value = stays.value.filter((stay) => stay.city === loc);
+    console.log(activeStay.value);
+  };
+
+  dataFiltered();
+
+  return { stays, activeStay, dataFiltered };
 });
