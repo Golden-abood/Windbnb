@@ -2,8 +2,8 @@
 import { defineStore } from "pinia";
 import data from "../assets/data/stays.json";
 import { ref } from "vue";
-import { stays } from "../types/index";
 export interface stays {
+  id: number;
   city: string;
   country: string;
   superHost: boolean;
@@ -16,14 +16,16 @@ export interface stays {
 }
 export const useAppStore = defineStore("app", () => {
   const stays = ref<stays[]>(data);
-  const activeStay = ref<stays[]>([]);
-
+  const stay = ref({});
+  const activeStays = ref<stays[]>([]);
+  const activeCity = ref("Oulu");
+  const fetchStay = (id: number) => {
+    stay.value = stays.value.filter((st) => st.id === id);
+  };
   const dataFiltered = (loc: string = "Oulu") => {
-    activeStay.value = stays.value.filter((stay) => stay.city === loc);
-    console.log(activeStay.value);
+    activeStays.value = stays.value.filter((stay) => stay.city === loc);
+    activeCity.value = loc;
   };
 
-  dataFiltered();
-
-  return { stays, activeStay, dataFiltered };
+  return { stays, activeCity, stay, activeStays, fetchStay, dataFiltered };
 });

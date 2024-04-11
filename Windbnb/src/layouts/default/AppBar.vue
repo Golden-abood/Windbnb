@@ -2,7 +2,7 @@
   <v-dialog transition="dialog-top-transition" width="auto">
     <template v-slot:activator="{ props: activatorProps }">
       <div class="md:flex justify-between">
-        <img src="../../assets/logo.svg" alt="" />
+        <img width="130" src="../../assets/logo.svg" alt="" />
         <div
           class="box_shadow flex items-center rounded-xl p-1 w-fit mx-auto md:!mx-0 mt-10 md:!mt-0"
         >

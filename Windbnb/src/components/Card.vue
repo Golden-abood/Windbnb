@@ -3,7 +3,7 @@
     v-for="(stay, index) in stays"
     :key="index"
     class="rounded-xl"
-    @click="$router.replace(`${stay.id}`)"
+    @click="$router.replace(`stays/${stay.id}`)"
   >
     <v-img :src="stay.photo" class="!max-h-[250px]" />
     <v-card-text class="flex justify-between items-center">
